@@ -2,14 +2,14 @@
  * @Author: Miya Wang
  * @Date: 2022-02-14 15:07:37
  * @LastEditors: Miya Wang
- * @LastEditTime: 2022-02-16 11:31:59
+ * @LastEditTime: 2022-02-17 18:01:54
  * @Description: 项目说明
 -->
 # JavaScript-Design-Pattern
 
 ## 项目介绍
 
-本项目是《JavaScript 设计模式》（张容铭著）的读书笔记，配合[知乎专栏](https:// www.zhihu.com/column/c_1066761682327691264)阅读效果更佳。
+本项目是《JavaScript 设计模式》（张容铭著）的读书笔记，配合[知乎专栏](https://www.zhihu.com/column/c_1066761682327691264)阅读效果更佳。
 
 本项目以代码为主，知乎专栏以提炼知识点和脑图为主。
 
