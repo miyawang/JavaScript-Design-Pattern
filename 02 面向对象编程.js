@@ -12,7 +12,7 @@
  * 使用 this 来为这个类增加属性
  * */
 
-var Book = function (id, bookname, price) {
+var Book = function(id, bookname, price) {
   this.id = id;
   this.bookname = bookname;
   this.price = price;
@@ -51,7 +51,7 @@ console.log(book.bookname); // 如何阅读一本书
  * 私有属性与私有方法，特权方法，对象公有属性和对象共有方法
  * */
 
-var Book = function (id, name, price) {
+var Book = function(id, name, price) {
   // 私有属性
   var num = 1;
   // 私有方法
@@ -111,7 +111,7 @@ var Book = (function() {
   // 静态私有方法
   function checkBook(name) {}
   // 返回构造函数
-  return function (newId, newName, newPrice) {
+  return function(newId, newName, newPrice) {
     // 私有变量
     var name, price;
     // 私有方法
@@ -189,7 +189,7 @@ var Book = (function() {
  * */
 
 // 图书类
-var Book = function (title, time, type) {
+var Book = function(title, time, type) {
   this.title = title;
   this.time = time;
   this.type = type;
@@ -198,7 +198,7 @@ var Book = function (title, time, type) {
 var b = Book("JS", "2022", "fe"); // window
 
 // 找位检察长
-var Book = function (title, time, type) {
+var Book = function(title, time, type) {
   // 判断执行过程中 this 是否是当前这个对象（如果是 说明是用 new 创建的）
   if (this instanceof Book) {
     this.title = title;
@@ -446,7 +446,7 @@ instance2.getTime(); // 2022
  * */
 
 // 单继承 属性复制
-var extend = function (target, source) {
+var extend = function(target, source) {
   // 遍历源对象中的属性
   for (let property in source) {
     // 将源对象中的属性复制到目标对象中

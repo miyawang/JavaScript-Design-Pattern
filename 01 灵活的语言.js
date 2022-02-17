@@ -2,7 +2,7 @@
  * @Author: Miya Wang
  * @Date: 2022-02-14 15:20:52
  * @LastEditors: Miya Wang
- * @LastEditTime: 2022-02-17 17:19:01
+ * @LastEditTime: 2022-02-17 18:00:22
  * @Description: 《JavaScript 设计模式》 第一章 灵活的语言——JavaScript
  */
 
@@ -91,7 +91,7 @@ obj.xxx().yyy();
  * 使用源函数和原型，抽象出一个统一添加方法的功能方法，不要污染源生对象（Function、Array等）
  */
 
-Function.prototype.addMethod = function (name, fn) {
+Function.prototype.addMethod = function(name, fn) {
   this[name] = fn;
 };
 var methods = function() {}; // or 下面一行
@@ -103,7 +103,7 @@ methods.xxx();
  * 1.9 链式添加
  */
 
-Function.prototype.addMethod = function (name, fn) {
+Function.prototype.addMethod = function(name, fn) {
   this[name] = fn;
   return this;
 };
@@ -113,7 +113,7 @@ Function.prototype.addMethod = function (name, fn) {
  * 函数式调用、类式调用 兼顾
  */
 
-Function.prototype.addMethod = function (name, fn) {
+Function.prototype.addMethod = function(name, fn) {
   this.prototype[name] = fn;
   return this;
 };
