@@ -12,7 +12,7 @@
  */
 
 function xxx() {}
-var xxx = function () {};
+var xxx = function() {};
 
 /**
  * 1.2 用对象收编变量
@@ -20,7 +20,7 @@ var xxx = function () {};
  */
 
 var obj = {
-  xxx: function () {},
+  xxx: function() {},
 };
 obj.xxx();
 
@@ -29,8 +29,8 @@ obj.xxx();
  * 声明后再加方法，函数也是对象
  */
 
-var obj = function () {};
-obj.xxx = function () {};
+var obj = function() {};
+obj.xxx = function() {};
 
 /**
  * 1.4 真假对象
@@ -38,9 +38,9 @@ obj.xxx = function () {};
  * 这样就可以给其他人用了
  */
 
-var obj = function () {
+var obj = function() {
   return {
-    xxx: function () {},
+    xxx: function() {},
   };
 };
 
@@ -49,8 +49,8 @@ var obj = function () {
  * 新创建的对象都会有自己的一套方法。消耗比较大。
  */
 
-var Obj = function () {
-  this.xxx = function () {};
+var Obj = function() {
+  this.xxx = function() {};
 };
 var a = new Obj();
 a.xxx();
@@ -59,13 +59,13 @@ a.xxx();
  * 1.6 一个检测类
  * 原型上统一添加
  */
-var Obj = function () {
-  Obj.prototype.xxx = function () {}; // 这种方法要将 prototype 写很多遍
+var Obj = function() {
+  Obj.prototype.xxx = function() {}; // 这种方法要将 prototype 写很多遍
 };
 
-var Obj = function () {
+var Obj = function() {
   Obj.prototype = {
-    xxx: function () {}, // 和上面的方法不能混用
+    xxx: function() {}, // 和上面的方法不能混用
   };
 };
 
@@ -74,12 +74,12 @@ var Obj = function () {
  * 每一个方法末尾将当前对象返回，避免写很多遍 Obj.xxx() Obj.yyy()
  */
 
-var obj = function () {
+var obj = function() {
   obj.prototype = {
-    xxx: function () {
+    xxx: function() {
       return this;
     },
-    yyy: function () {
+    yyy: function() {
       return this;
     },
   };
@@ -94,9 +94,9 @@ obj.xxx().yyy();
 Function.prototype.addMethod = function (name, fn) {
   this[name] = fn;
 };
-var methods = function () {}; // or 下面一行
+var methods = function() {}; // or 下面一行
 var methods = new Function();
-methods.addMethod("xxx", function () {});
+methods.addMethod("xxx", function() {});
 methods.xxx();
 
 /**
@@ -117,6 +117,6 @@ Function.prototype.addMethod = function (name, fn) {
   this.prototype[name] = fn;
   return this;
 };
-var Methods = function () {};
+var Methods = function() {};
 var m = new Methods();
 m.xxx();

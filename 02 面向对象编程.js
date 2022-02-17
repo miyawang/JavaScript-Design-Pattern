@@ -2,7 +2,7 @@
  * @Author: Miya Wang
  * @Date: 2022-02-15 15:33:32
  * @LastEditors: Miya Wang
- * @LastEditTime: 2022-02-17 17:18:44
+ * @LastEditTime: 2022-02-17 17:56:57
  * @Description: 《JavaScript 设计模式》 第二章 写的都是看到的——面向对象编程
  */
 
@@ -24,7 +24,7 @@ var Book = function (id, bookname, price) {
  * 也可使用原型
  * */
 
-Book.prototype.display = function () {};
+Book.prototype.display = function() {};
 
 /**
  * 2.2 包装明星——封装
@@ -33,7 +33,7 @@ Book.prototype.display = function () {};
  * */
 
 Book.prototype = {
-  display: function () {},
+  display: function() {},
 };
 
 /**
@@ -57,14 +57,14 @@ var Book = function (id, name, price) {
   // 私有方法
   function checkId() {}
   // 特权方法：通过 this 创建的方法，不但可以访问这些对象的共有属性和共有方法，而且还可能访问到类（创建时）或对象自身的私有属性和私有方法，这些方法权利比较大
-  this.getName = function () {};
-  this.getPrice = function () {};
-  this.setName = function () {};
-  this.setPrice = function () {};
+  this.getName = function() {};
+  this.getPrice = function() {};
+  this.setName = function() {};
+  this.setPrice = function() {};
   // 对象公有属性：在函数内部通过 this 创建的属性和方法，在类创建对象时，每个对象自身都拥有一份并且可以在外部访问到，通过 this 创建的属性可看作是对象共有属性和对象共有方法
   this.id = id;
   // 对象公有方法
-  this.copy = function () {};
+  this.copy = function() {};
   // 构造器：在创建对象时调用的特权方法还可以看作是类的构造器
   this.setName(name);
   this.setPrice(price);
@@ -73,7 +73,7 @@ var Book = function (id, name, price) {
 // 类静态公有属性（对象不能访问）：在类外面通过点语法定义的属性以及方法被称为类的静态共有属性和类的静态共有方法
 Book.isChinese = true;
 // 类静态公有方法（对象不能访问）
-Book.resetTime = function () {
+Book.resetTime = function() {
   console.log("new time");
 };
 // 类通过 prototype 创建的属性或者方法在类实例的对象中是可以通过 this 访问到的，所以我们将 prototype 对象中的属性和方法称为共有属性和共有方法
@@ -81,7 +81,7 @@ Book.prototype = {
   // 公有属性
   isJSBook: false,
   // 公有方法
-  display: function () {},
+  display: function() {},
 };
 
 var b = new Book(216, "如何阅读一本书", 88);
@@ -105,7 +105,7 @@ Book.resetTime(); // new time
  * */
 
 // 利用闭包来实现
-var Book = (function () {
+var Book = (function() {
   // 静态私有变量
   var bookNum = 0;
   // 静态私有方法
@@ -117,14 +117,14 @@ var Book = (function () {
     // 私有方法
     function checkId(id) {
       // 特权方法
-      this.getName = function () {};
-      this.getPrice = function () {};
-      this.setName = function () {};
-      this.setPrice = function () {};
+      this.getName = function() {};
+      this.getPrice = function() {};
+      this.setName = function() {};
+      this.setPrice = function() {};
       // 公有属性
       this.id = id;
       // 公有方法
-      this.copy = function () {};
+      this.copy = function() {};
       bookNum++;
       if (bookNum > 100) {
         throw new Error("仅有 100 本书");
@@ -139,11 +139,11 @@ Book.prototype = {
   // 静态公有属性
   isJSBook: false,
   // 静态公有方法
-  display: function () {},
+  display: function() {},
 };
 
 // 在闭包外部添加原型属性和方法看似脱离了闭包这个类，所以有时候在闭包内部实现一个完整的类，然后将其返回
-var Book = (function () {
+var Book = (function() {
   // 静态私有变量
   var bookNum = 0;
   // 静态私有方法
@@ -155,14 +155,14 @@ var Book = (function () {
     // 私有方法
     function checkId(id) {
       // 特权方法
-      this.getName = function () {};
-      this.getPrice = function () {};
-      this.setName = function () {};
-      this.setPrice = function () {};
+      this.getName = function() {};
+      this.getPrice = function() {};
+      this.setName = function() {};
+      this.setPrice = function() {};
       // 公有属性
       this.id = newId;
       // 公有方法
-      this.copy = function () {};
+      this.copy = function() {};
       bookNum++;
       if (bookNum > 100) {
         throw new Error("仅有 100 本书");
@@ -177,7 +177,7 @@ var Book = (function () {
     // 静态公有属性
     isJSBook: false,
     // 静态公有方法
-    display: function () {},
+    display: function() {},
   };
   return _book;
 })();
@@ -221,7 +221,7 @@ function FatherClass() {
   this.fatherValue = true;
 }
 // 为父类添加共有方法
-FatherClass.prototype.getFatherValue = function () {
+FatherClass.prototype.getFatherValue = function() {
   return this.fatherValue;
 };
 // 声明子类
@@ -231,7 +231,7 @@ function ChildClass(params) {
 // 继承父类
 ChildClass.prototype = new FatherClass();
 // 为子类添加共有方法
-ChildClass.prototype.getChildValue = function () {
+ChildClass.prototype.getChildValue = function() {
   return this.childValue;
 };
 
@@ -274,7 +274,7 @@ function FatherClass(id) {
   this.id = id;
 }
 // 父类声明原型方法
-FatherClass.prototype.showBooks = function () {
+FatherClass.prototype.showBooks = function() {
   console.log(this.books);
 };
 // 声明子类
@@ -308,7 +308,7 @@ function FatherClass(name) {
   this.books = ["js", "html", "css"];
 }
 // 父类原型共有方法
-FatherClass.prototype.getName = function () {
+FatherClass.prototype.getName = function() {
   console.log(this.name);
 };
 // 声明子类
@@ -321,7 +321,7 @@ function ChildClass(name, time) {
 // 类式继承 子类原型继承父类
 ChildClass.prototype = new FatherClass();
 // 子类原型方法
-ChildClass.prototype.getTime = function () {
+ChildClass.prototype.getTime = function() {
   console.log(this.time);
 };
 
@@ -386,7 +386,7 @@ function createBook(obj) {
   // 通过原型继承方式创建新对象
   var o = new inheritObj(obj);
   // 拓展新对象
-  o.getName = function () {
+  o.getName = function() {
     console.log(name);
   };
   // 返回拓展后的新对象
@@ -415,7 +415,7 @@ function FatherClass(name) {
   this.colors = ["#f00", "#0f0", "#00f"];
 }
 // 定义父类原型方法
-FatherClass.prototype.getName = function () {
+FatherClass.prototype.getName = function() {
   console.log(this.name);
 };
 // 定义子类
@@ -428,7 +428,7 @@ function ChildClass(name, time) {
 // 寄生式继承父类原型
 inheritPrototype(ChildClass, FatherClass);
 // 子类新增原型方法
-ChildClass.prototype.getTime = function () {
+ChildClass.prototype.getTime = function() {
   console.log(this.time);
 };
 // 创建两个测试方法
@@ -475,7 +475,7 @@ console.log(book.name); // js
 console.log(book.alikeBook); // ["css", "html", "http"]
 
 // 多继承 属性复制
-var mix = function () {
+var mix = function() {
   // 将传入的多个对象的属性复制到源对象中
   var i = 1, // 从第二个参数起为被继承的对象
     len = arguments.length, // 获取参数长度
@@ -495,7 +495,7 @@ var mix = function () {
   return target;
 };
 // 也可以将它绑定到 Object 上
-Object.prototype.mix = function () {
+Object.prototype.mix = function() {
   var i = 1, // 从第二个参数起为被继承的对象
     len = arguments.length, // 获取参数长度
     arg; // 缓存参数对象
@@ -553,7 +553,7 @@ function Add() {
   function two(num1, num2) {
     return num1 + num2;
   }
-  this.add = function () {
+  this.add = function() {
     var arg = arguments;
     len = arg.length;
     switch (len) {
