@@ -1,3 +1,10 @@
+/*
+ * @Author: Miya Wang
+ * @Date: 2022-02-15 15:33:32
+ * @LastEditors: Miya Wang
+ * @LastEditTime: 2022-02-18 14:10:11
+ * @Description: 《JavaScript 设计模式》 第三章 神奇的魔术师——简单工厂模式
+ */
 /**
  * 3.1 工作中的第一次需求
  * 登录模块：用户名输入不规范警示框
